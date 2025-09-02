@@ -59,7 +59,7 @@ public class Beutel {
             return;
         }
         Node currentNode = this.head;
-        for (int i = 0; i < this.size - 1; i++) {
+        for (int i = 0; i < this.size - 2; i++) {
             currentNode = currentNode.next;
         }
         currentNode.next = null;

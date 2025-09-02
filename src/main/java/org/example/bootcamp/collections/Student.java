@@ -2,6 +2,7 @@ package org.example.bootcamp.collections;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Student {
     private String firstName;
@@ -43,5 +44,17 @@ public class Student {
 
     public List<Kurs> getKurse() {
         return kurse;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return Objects.equals(firstName, student.firstName) && Objects.equals(lastName, student.lastName) && Objects.equals(studentId, student.studentId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, lastName, studentId);
     }
 }

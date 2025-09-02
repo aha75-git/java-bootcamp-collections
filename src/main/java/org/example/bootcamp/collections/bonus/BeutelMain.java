@@ -23,6 +23,7 @@ public class BeutelMain {
         beutel.removeLast();
         System.out.println("Size nach dem Löschen des letzten Elementes: " + beutel.size());
         System.out.println("Das letzte Element : " + beutel.get(beutel.size() - 1));
+        beutel.printElements();
         System.out.println();
 
         System.out.println("Das Element am index 3: " + beutel.get(3)); // 4
