@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Schule {
+    private static int idCount = 1;
     private final List<Student> students;
 
     public Schule() {
@@ -18,9 +19,26 @@ public class Schule {
         return this.students.add(student);
     }
 
+    public boolean removeStudent(Student student) {
+        return this.students.remove(student);
+    }
+
+    public Student getStudentById(String id) {
+        for (Student student : students) {
+            if(student.getStudentId().equals(id)) {
+                return student;
+            }
+        }
+        return null;
+    }
+
     public void printStudents() {
         for (Student student : students) {
-            System.out.println(student.getFirstName() + " " + student.getLastName());
+            System.out.println(student.getFirstName() + " " + student.getLastName() + " (ID: " + student.getStudentId() + ")");
         }
+    }
+
+    public static int generateStudentId() {
+        return idCount++;
     }
 }
