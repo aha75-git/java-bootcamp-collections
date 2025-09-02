@@ -38,6 +38,14 @@ public class Schule {
         }
     }
 
+    public List<Kurs> getKurseByStudentId(String studentID) {
+        Student student = getStudentById(studentID);
+        if(student == null) {
+            return new ArrayList<>();
+        }
+        return student.getKurse();
+    }
+
     public static int generateStudentId() {
         return idCount++;
     }

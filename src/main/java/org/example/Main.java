@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.bootcamp.collections.Kurs;
 import org.example.bootcamp.collections.Schule;
 import org.example.bootcamp.collections.Student;
 
@@ -42,5 +43,16 @@ public class Main {
             System.out.println(student);
         }
 
+        Student studentMax = schule.getStudentById("1");
+        if (studentMax != null) {
+            studentMax.addKurs(new Kurs("Mathematik", "Herr Arndt", "1.01"));
+            studentMax.addKurs(new Kurs("English", "Frau Muster", "2.11"));
+            studentMax.addKurs(new Kurs("Programmiersprachen", "Herr Balzert", "1.23"));
+
+            System.out.println();
+            System.out.println("Kurse vom Studenten mit der ID=1: ");
+            schule.getKurseByStudentId("1").forEach(System.out::println);
+            System.out.println();
+        }
     }
 }
